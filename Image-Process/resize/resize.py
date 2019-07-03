@@ -17,6 +17,6 @@ if __name__ == '__main__':
         file_in = sys.argv[1]
         width = int(sys.argv[2])
         height = int(sys.argv[3])
-        file_out = sys.argv[2] + '*' + sys.argv[3] + '_' + file_in
+        file_out = sys.argv[2] + sys.argv[3] + '_' + file_in
 
         resizeImage(file_in, width, height, file_out)

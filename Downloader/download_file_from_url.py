@@ -1,5 +1,6 @@
 # coding: utf-8
 import re
+import sys
 import requests
 from pathlib import Path
 from time import time, perf_counter
@@ -47,9 +48,9 @@ def download_file_from_url(dl_url, file_name, headers):
  
  
 if __name__ == '__main__':
-    url = 'https://software-download.microsoft.com/db/Win10_1803_Chinese(Simplified)_x64.iso?t=338bc034-92a0-4207-a311-029453b2a48c&e=1556284212&h=47a7b1f80674ca847194d13b14fd82e5'
-    #filename = url.rpartition('/')[-1]
-    filename = 'win10_1803_x64.iso'
+    url = sys.argv[1] 
+    filename = url.rpartition('/')[-1]
+    #filename = 'win10_1803_x64.iso'
     headers = {
         'User-Agent': UserAgent().random, }
     download_file_from_url(url, filename, headers)
